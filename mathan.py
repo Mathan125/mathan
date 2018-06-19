@@ -1,6 +1,8 @@
-#!/bin/python
 
 import sqlite3
+import json
+
+DB = "./mathankumar.db"
 
 def dict_factory(cursor, row):
     d = {}
@@ -13,12 +15,6 @@ connection.row_factory = dict_factory
 
 cursor = connection.cursor()
 
-cursor.execute("select * from mathan")
+cursor.execute('''select * from mathan''')
 
-# fetch all or one we'll go for all.
-
-results = cursor.fetchall()
-
-print results
-
-connection.close()
+cursor.fetchall()

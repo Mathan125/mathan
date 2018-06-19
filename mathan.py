@@ -17,4 +17,8 @@ cursor = connection.cursor()
 
 cursor.execute('''select * from mathan''')
 
-cursor.fetchall()
+data = cursor.fetchall()
+
+json_string = json.dumps(data)
+
+data
